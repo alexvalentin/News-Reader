@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">News Reader</string>
+    <string name="title">This is the title</string>
+    <string name="some_text">Text is a text blabla bla</string>
 </resources>
