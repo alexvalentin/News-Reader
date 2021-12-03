@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">News Reader</string>
     <string name="title">This is the title</string>
-    <string name="some_text">Text is a text blabla bla</string>
+    <string name="some_text">Text is a descriptive text</string>
+    <string name="api_attribution">Powered by NewsAPI.org</string>
+    <string name="results">Received %d results</string>
+    <string name="network_error">Something went wrong, are you connected? debug: %s</string>
+    <string name="refresh">Refresh</string>
+    <string name="error_title">Oops</string>
+    <string name="ok">OK</string>
 </resources>

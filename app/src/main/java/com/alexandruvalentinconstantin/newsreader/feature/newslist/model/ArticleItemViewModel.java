@@ -1,14 +1,20 @@
 package com.alexandruvalentinconstantin.newsreader.feature.newslist.model;
 
-import androidx.lifecycle.ViewModel;
+import androidx.annotation.Nullable;
 
-public class ArticleItemViewModel extends ViewModel {
+import io.reactivex.annotations.NonNull;
 
+public class ArticleItemViewModel {
+
+    public final String image;
     public final String titleName;
     public final String contentText;
+    @Nullable
+    public Integer id;
 
-    public ArticleItemViewModel(String titleName, String contentText) {
+    public ArticleItemViewModel(@NonNull String titleName, @NonNull String contentText, @NonNull String image) {
         this.titleName = titleName;
         this.contentText = contentText;
+        this.image = image;
     }
 }

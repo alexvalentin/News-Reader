@@ -4,7 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/NewsReader/app/src/main/res/layout/article_new_item.xml" value="0.264" />
-        <entry key="..\:/Android/NewsReader/app/src/main/res/layout/list_fragment.xml" value="0.264" />
+        <entry key="..\:/Android/NewsReader/app/src/main/res/layout/list_fragment.xml" value="0.24507658643326038" />
         <entry key="..\:/Android/NewsReader/app/src/main/res/layout/main_activity.xml" value="0.1" />
         <entry key="..\:/Android/NewsReader/app/src/main/res/layout/main_fragment.xml" value="0.264" />
         <entry key="..\:/Android/NewsReader/app/src/main/res/layout/single_item_of_list.xml" value="0.4" />
@@ -12,8 +12,9 @@
     </option>
   </component>
   <component name="EntryPointsManager">
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="androidx.lifecycle.OnLifecycleEvent" />
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="androidx.databinding.BindingAdapter" />
+      <item index="1" class="java.lang.String" itemvalue="androidx.lifecycle.OnLifecycleEvent" />
     </list>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">

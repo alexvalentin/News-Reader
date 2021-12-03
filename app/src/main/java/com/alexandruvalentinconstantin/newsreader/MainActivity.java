@@ -18,6 +18,5 @@ public class MainActivity extends AppCompatActivity {
                     .replace(R.id.container, NewsListFragment.newInstance())
                     .commitNow();
         }
-
     }
 }

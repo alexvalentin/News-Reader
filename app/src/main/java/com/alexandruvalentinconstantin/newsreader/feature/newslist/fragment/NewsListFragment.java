@@ -1,7 +1,8 @@
 package com.alexandruvalentinconstantin.newsreader.feature.newslist.fragment;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +14,13 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.alexandruvalentinconstantin.newsreader.databinding.ListFragmentBinding;
 import com.alexandruvalentinconstantin.newsreader.feature.newslist.model.NewsListViewModel;
+import com.alexandruvalentinconstantin.newsreader.feature.newslist.model.factory.NewsListViewModelFactory;
+import com.alexandruvalentinconstantin.newsreader.feature.newslist.navigator.AlertNavigator;
 
 public class NewsListFragment extends Fragment {
 
-    private NewsListViewModel viewModel;
+    private NewsListViewModel mViewModel;
+    private AlertNavigator alertNavigator;
 
     public NewsListFragment() {
     }
@@ -28,11 +32,13 @@ public class NewsListFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        alertNavigator = new AlertNavigator(getChildFragmentManager(), requireContext());
 
-        viewModel = new ViewModelProvider(this).get(NewsListViewModel.class);
-        // viewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getActivity().getApplication())).get(NewsListViewModel.class);
-        Log.d(this.getClass().getSimpleName(), "onCreate: " + viewModel);
-        getLifecycle().addObserver(viewModel);
+        mViewModel = new ViewModelProvider(this, new NewsListViewModelFactory(requireActivity().getApplication())).get(NewsListViewModel.class);
+        getLifecycle().addObserver(mViewModel);
+
+        mViewModel.error.observe(this, throwable -> alertNavigator.showErrorFor(throwable));
+        mViewModel.openLink.observe(this, this::openLink);
 
     }
 
@@ -42,11 +48,13 @@ public class NewsListFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         ListFragmentBinding binding = ListFragmentBinding.inflate(inflater, container, false);
-
-        binding.setViewModel(viewModel);
-
+        binding.setViewModel(mViewModel);
         return binding.getRoot();
     }
 
-
+    private void openLink(@NonNull String link) {
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(link));
+        startActivity(i);
+    }
 }

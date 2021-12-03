@@ -46,7 +46,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @SuppressLint("NotifyDataSetChanged")
     public void setItems(List<ArticleItemViewModel> items) {
-        articleList = items;
+        this.articleList = items;
         notifyDataSetChanged();
     }
 
