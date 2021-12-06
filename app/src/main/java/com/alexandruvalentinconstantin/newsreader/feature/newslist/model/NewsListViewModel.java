@@ -2,7 +2,6 @@ package com.alexandruvalentinconstantin.newsreader.feature.newslist.model;
 
 import android.annotation.SuppressLint;
 import android.app.Application;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.ObservableArrayList;
@@ -84,17 +83,9 @@ public class NewsListViewModel extends AndroidViewModel implements LifecycleObse
 
     @Override
     public void onItemSelected(ArticleItemViewModel item) {
-        events.onNext(new EventModel(EventModel.EventType.EDIT_ITEM, item));
+        events.onNext(new EventModel(item));
     }
 
-    @SuppressLint("CheckResult")
-    @Override
-    public void onDeleteItemSelected(ArticleItemViewModel item) {
-        repo.deleteItem(item.id).subscribe(
-                () -> Log.e(TAG, "onDeleteItemSelected onComplete"),
-                throwable -> Log.e(TAG, "onDeleteItemSelected error: ", throwable)
-        );
-    }
 
     @Override
     protected void onCleared() {

@@ -6,12 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.alexandruvalentinconstantin.newsreader.feature.newslist.fragment.NewsListFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class BeginTransitionToFragmentActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
+        setContentView(R.layout.begin_transition_to_fragment_activity);
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()

@@ -14,12 +14,12 @@ import com.alexandruvalentinconstantin.newsreader.feature.newslist.model.Article
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.TaskViewHolder> {
+public class ArticlesListAdapter extends RecyclerView.Adapter<ArticlesListAdapter.TaskViewHolder> {
 
     private final OnArticleSelected handler;
     private List<ArticleItemViewModel> articleList;
 
-    public RecyclerViewAdapter(OnArticleSelected handler) {
+    public ArticlesListAdapter(OnArticleSelected handler) {
         this.handler = handler;
         this.articleList = new ArrayList<>();
     }
