@@ -15,7 +15,7 @@
         android:theme="@style/Theme.NewsReader">
 
         <activity
-            android:name=".BeginTransitionToFragmentActivity"
+            android:name=".NewsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

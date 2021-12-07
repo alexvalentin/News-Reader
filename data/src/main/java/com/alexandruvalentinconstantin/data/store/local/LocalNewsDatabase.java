@@ -13,5 +13,4 @@ import com.alexandruvalentinconstantin.data.feature.news.local.ArticlesDao;
 public abstract class LocalNewsDatabase extends RoomDatabase {
 
     public abstract ArticlesDao articlesDao();
-
 }

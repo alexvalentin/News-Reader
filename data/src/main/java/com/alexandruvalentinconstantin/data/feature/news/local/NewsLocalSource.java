@@ -8,7 +8,6 @@ import com.alexandruvalentinconstantin.data.store.local.mapper.NewsEntityToArtic
 import java.util.ArrayList;
 import java.util.List;
 
-import io.reactivex.Completable;
 import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
 
@@ -24,23 +23,6 @@ public class NewsLocalSource {
         return dao
                 .queryArticleDos()
                 .map(new NewsEntityToArticleMapper());
-    }
-
-    public Single<ArticleEntity> getNewsItem(int id) {
-        return dao.queryArticleDoItem(id);
-    }
-
-    public Completable deleteNewsItem(int id) {
-        return dao.deleteNewsItem(id);
-    }
-
-    public Completable saveItem(ArticleEntity newsArticle) {
-        if (newsArticle.id == null) {
-            return dao.insertNewsArticle(newsArticle);
-
-        } else {
-            return dao.updateAllItemsOfNews(newsArticle.title, newsArticle.content, newsArticle.imageUrl, newsArticle.id);
-        }
     }
 
     @SuppressLint("CheckResult")

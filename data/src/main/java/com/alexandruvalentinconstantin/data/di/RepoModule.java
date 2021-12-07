@@ -45,7 +45,7 @@ public class RepoModule {
             synchronized (LocalNewsDatabase.class) {
                 if (database == null) {
                     database = Room.databaseBuilder(context,
-                            LocalNewsDatabase.class, "NewsReader.db")
+                            LocalNewsDatabase.class, "NewsReader3.db")
                             .build();
                 }
             }

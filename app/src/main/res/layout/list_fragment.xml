@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context="com.alexandruvalentinconstantin.newsreader.BeginTransitionToFragmentActivity">
+        tools:context="com.alexandruvalentinconstantin.newsreader.NewsActivity">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
@@ -35,9 +35,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="12dp"
-            android:background="#21506C"
+            android:layout_marginBottom="12dp"
             android:onClick="@{() -> viewModel.refreshData()}"
             android:text="@string/refresh"
+            android:background="@color/bluemarin"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />

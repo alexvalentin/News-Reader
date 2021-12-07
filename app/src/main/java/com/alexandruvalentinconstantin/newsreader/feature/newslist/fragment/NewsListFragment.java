@@ -39,7 +39,6 @@ public class NewsListFragment extends Fragment {
 
         mViewModel.error.observe(this, throwable -> alertNavigator.showErrorFor(throwable));
         mViewModel.openLink.observe(this, this::openLink);
-
     }
 
     @Nullable
