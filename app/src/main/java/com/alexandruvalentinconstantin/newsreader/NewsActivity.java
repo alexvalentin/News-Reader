@@ -1,20 +1,21 @@
 package com.alexandruvalentinconstantin.newsreader;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-import com.alexandruvalentinconstantin.newsreader.ui.main.MainFragment;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+import com.alexandruvalentinconstantin.newsreader.feature.newslist.fragment.NewsListFragment;
+
+public class NewsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
+        setContentView(R.layout.news_activity);
+
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container, MainFragment.newInstance())
+                    .replace(R.id.container, NewsListFragment.newInstance())
                     .commitNow();
         }
     }
